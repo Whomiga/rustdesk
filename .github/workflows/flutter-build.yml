@@ -1650,7 +1650,8 @@ jobs:
       - name: Force Custom App Name and ID
         run: |
           sed -i 's/android:label="RustDesk"/android:label="RustDesk MPT"/g' flutter/android/app/src/main/AndroidManifest.xml
-          sed -i 's/com.carriez.flutter_hbb/com.missingpiece.rustdesk/g' flutter/android/app/build.gradle*
+          sed -i 's/applicationId = "com.carriez.flutter_hbb"/applicationId = "com.missingpiece.rustdesk"/g' flutter/android/app/build.gradle.kts
+          sed -i 's/applicationId "com.carriez.flutter_hbb"/applicationId "com.missingpiece.rustdesk"/g' flutter/android/app/build.gradle || true
           grep -n "android:label" flutter/android/app/src/main/AndroidManifest.xml
           grep -n "applicationId" flutter/android/app/build.gradle*
 
