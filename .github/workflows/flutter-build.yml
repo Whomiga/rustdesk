@@ -142,6 +142,7 @@ jobs:
     uses: ./.github/workflows/bridge.yml
 
   build-RustDeskTempTopMostWindow:
+    if: false
     needs: [validate-update-metadata-keys]
     uses: ./.github/workflows/third-party-RustDeskTempTopMostWindow.yml
     strategy:
