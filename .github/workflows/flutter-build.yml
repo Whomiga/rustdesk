@@ -1647,6 +1647,13 @@ jobs:
           name: librustdesk.so.${{ matrix.job.target }}
           path: ./target/${{ matrix.job.target }}/release/liblibrustdesk.so
 
+      - name: Force Custom App Name and ID
+        run: |
+          sed -i 's/android:label="RustDesk"/android:label="RustDesk MPT"/g' flutter/android/app/src/main/AndroidManifest.xml
+          sed -i 's/com.carriez.flutter_hbb/com.missingpiece.rustdesk/g' flutter/android/app/build.gradle*
+          grep -n "android:label" flutter/android/app/src/main/AndroidManifest.xml
+          grep -n "applicationId" flutter/android/app/build.gradle*
+
       - name: Build rustdesk
         shell: bash
         env:
