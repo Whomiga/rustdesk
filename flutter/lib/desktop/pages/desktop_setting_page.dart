@@ -58,7 +58,7 @@ enum SettingsTabKey {
   display,
   account,
   printer,
-  about
+  about,
 }
 
 class DesktopSettingPage extends StatefulWidget {
@@ -80,7 +80,7 @@ class DesktopSettingPage extends StatefulWidget {
         !bind.isDisableSettings() &&
         bind.mainGetBuildinOption(key: kOptionHideRemotePrinterSetting) != 'Y')
       SettingsTabKey.printer,
-    SettingsTabKey.about
+    SettingsTabKey.about,
   ];
 
   DesktopSettingPage({Key? key, required this.initialTabkey}) : super(key: key);
